@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>Storage Fun!</title>
+  <script src="cookies.js"></script>
+  <script>
+      function changeBg( color ){
+        // if ( window.localStorage ) we used to do this to feature proof ourselves
+        if (color == "clear"){
+          localStorage.removeItem("color");
+        } else if(color){
+          //lets put that in local storage
+          localStorage.setItem("color", color);
+        }
+        document.body.style.backgroundColor = localStorage.getItem("color");
+      }
+
+      let userId = cookies.getCookie("user_id");
+
+      if(!userId){
+        let getName = prompt("Hi, first Time huh? Whats your name?");
+        document.write(`<h2>Welcome,`+(getName!=""?getName:"Anonymous User")+`</h2>This is your first visit here`);
+        cookies.setCookie("user_id",(getName!=""?getName:"Anonymous User"));
+      } else {
+        document.write("<h2>Hi,"+userId+"</h2");
+      }
+    </script>
+</head>
+<body onload="changeBg();">
+  <div style="position:absolute; right:10px; bottom:10px; background:#c9c">
+    Change your style!<br/>
+    <span style="cursor:pointer;" onclick="changeBg( 'red' );">Red</span><br/>
+    <span style="cursor:pointer;" onclick="changeBg( 'green' );">Green</span><br/>
+    <span style="cursor:pointer;" onclick="changeBg( 'clear' );">Clear</span>
+  </div>
+</body>
+</html>

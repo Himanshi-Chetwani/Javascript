@@ -1,0 +1,31 @@
+1. Pay attention to closure!!
+2. Closure enables us to have self conatined modules.
+3. Closure is used in node, not in any browsers.
+4. Chap 3 - take time reading thru it
+5. Some of it may not make a lot of sense.
+6. Forms will not be built in class. Homework assignment about it -Form from hell.
+7. Throw out everythog learnt about UI/UX and make it awful to use.
+8. Make it very entertaining. Eg when you hover over the form, the feild moves. 
+9. Add validations using JS and HTML5 even tho it is a bad practise. 
+10. use require keywork!
+11. XML Syntax. with Name value pairs
+12. Not required in HTML5 , so you dont need to do that.
+13. Use place holder for any text feild you have got.
+14. .value, RE, inclusion withon a set.
+15. Include radio buttons( special case cause you cant say - is that a value)
+16. Have a common name so they are put in a radio button group!
+17. How do you get a hold of them and iterate thru them? ->Get elements by name
+18. You should be able to click the label, mae label interact with the button. -> Put a label tag around the label
+<label for = "spam"> Send me spam <label>
+19. HW Due next Tuesday night.
+---
+1. If I want to add something as the first element at the beggining of the body - insertbefore()
+2. Deep clone
+3. Buillding an image gallery ->
+3.1. Adding styling in
+3.2. Why is it 3 character? You double it - 444444
+3.3. You can add multiple shadows by , seperation
+3.4 How do you keep something from wrapping?
+Its wrapping cause its given a fixed width.
+4. Good reason for not including document.image in the loop-> Cause it needs to inspect the element every single time in the loop. S analyze it once and reference the lenght.
+5. 

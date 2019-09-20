@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+  <title>HTML 5 Contact Form</title>
+  <link rel='stylesheet' href='styles.css' />
+  <script>
+  </script>
+</head>
+<body>
+    <form class="contact_form" action="" method="post" name="contact_form">
+    <ul>
+      <li>
+        <h2> Contact Form </h2>
+        <span class = "required_notification">Denotes required feild</span>
+      </li>
+      <li>
+        <label for="name">Name:</label>
+        <input type="text" name="Name" placeholder="FirstName LastName"/>
+      </li>
+      <li>
+        <label for="Email">Email:</label>
+        <input type="text" name="Email"placeholder="xyz@someaddress.com" />
+        <span class="form_hint"> Proper Format "name@something.com"</span>
+        <!-- grouping elements -->
+      </li>
+      <li>
+        <label for="Website">Website</label>
+        <input type="text" name="Website" placeholder="http://webaddress.com">
+        <span class="Website">Proper Format ="http://someaddress.com"</span>
+      </li>
+      <li>
+        <label for="Message">Message</label>
+        <textarea name="Message" rows="6" cols="40"></textarea>
+      </li>
+      <li>
+        <button type="submit" name="submit">Submit Form  </button>
+
+    </ul>
+    </form>
+
+
+</body>
+</html>

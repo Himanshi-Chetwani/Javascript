@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8' />
+	<title>DHTML FUN</title>
+  <script type="text/javascript">
+  let newWin;
+    function createWin() {
+      //url
+      //name for the window - When you want functionality to open an existing window
+      //ScreenX and ScreenY are psotions - far from top left corner should your new browser window open
+      //Just for the child window, if you put true then it populates the history of the child window
+      newWin = window.open("","myWin","height=300,width=300,screenX=350,screenY=50");
+      //newWin.moveTo(400,100);
+      //newWin.resizeTo(400,400);
+      newWin.document.write(`<h1 id ='coolBeans' style='position:absolute;left:2px'>
+      Yay Javascript!
+      </h1>`);
+
+    }
+    function changeColor(color){
+      newWin.focus();
+      newWin.document.getElementById("coolBeans").style.color=color;
+    }
+    function changeStyle(prop,val){
+      newWin.focus();
+      newWin.document.getElementById("coolBeans").style[prop]=val;
+    }
+    function slideIt(){
+      newWin.focus();
+      let ele=newWin.document.getElementById("coolBeans"),
+      //fIGURING OUT NEW LEFT POS
+      curPos=parseInt(ele.style.left),
+      newPos=curPos+5;
+      console.log("curPos:",curPos,"newPos:",newPos);
+      //Setting new pos
+      //Did concat
+      //newPos=curPos+parseInt(5);
+      //If you slide 1000s of records and each sides then you crash the browser,
+      // so its beteer to use set iterable and set time out and do it safely
+      ele.style.left=newPos;
+      if(newPos<200){
+      setTimeout(slideIt,50);
+    }
+    }
+  </script>
+</head>
+<body>
+	<a href="javascript:createWin();">click for new window</a>
+	<br><br><br>
+	<form>
+
+ 		Put in a color name (or hex):  <input type="text" size="30" onchange="changeColor(this.value);"/></br>
+ 		Put in a font size (like 12pt): <input type="text" size="30" onchange="changeStyle('fontSize',this.value);" /><br/>
+ 		Put in a font family:           <input type="text" size="30" onchange="" /><br/>
+ 		Put in a new left (like 100px): <input type="text" size="30" onchange="" /><br/>
+ 		Put in a new top (like 200px):  <input type="text" size="30" onchange="" /><br/>
+ 		Put in a new margin:            <input type="text" size="30" onchange="" />
+ 		<input type="button" onclick="slideIt();" value="click me to make it slide" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,28 @@
+1. For every element in th DOM there is a style property inputEle.style.backgroundColor
+2. We replace  and change it to camel case because - means subtraction in JS. Eg backgroundColor insted of background-color.
+3.setTimeOut function to introduce delay!
+4. ssh hc9165@serinity.ist.rit.eu
+Enter your password
+Equivalent flr ls -la
+Wait 20 mins and make sure yu have .my.cnf
+You can use commander/putty as well
+5. Sites directory serves t the web and everything goes into that All you web files.
+6. serenityist.edu/~hc9165/index.html
+7. equivalent of pwd will also work
+8. Path on server and browser will also work
+9. You VPN to rit network
+10. Serenity uses the Apache web server
+-------
+1. Difference between local storage and session storage -> session storage persists only for the session. -> until you close the browser
+2. local storage -> persists until you remove user data.
+3. Web SQL and index DB. IDB -> store a lot of data and works fine. Using local databases.
+4. Cookies is another method of storing information.
+5. Server can use cookies.
+6. Request and Response of  server using HTTP. 
+7. HTTP header uses set cookies. like first name. The browser sees the header comes in associated with the cookies The browser will automaticlly send that cookie
+8. Every subsequent request is stored in the server. 
+9. Every subsequent request contains a session ID and thus uses it in subsequent requests.
+10. If we want to delete a cookie, the expiration date is in the browser. This is how the server can remove cookie.
+11. The cookie helps you stay logged in and the browser autmatically deletes the cookie base don how long it wants you to stay logged in
+12. Checks for HTTPS. Cookie is nly accessible thru HTTP request.
+13. Path is set to the root of the application

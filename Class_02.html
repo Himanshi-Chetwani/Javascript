@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Fun!</title>
+  <script>
+    /*
+      Developed at Netscape by Brendan Eich
+      1995
+
+      ECMAscript is the offical standard
+      JavaScript is Sun/Oracle trademark
+
+      ES3 1999
+      ES5 2009
+      ES6 (aka ES2015)
+
+      ALL browsers - cross platform
+      server-side Node.js
+    */
+    //var likeAutumn = prompt( "Do you like autumn?" );
+    //alert( "You said " + likeAutumn );
+    //confirm( "Really?" );
+  </script>
+</head>
+<body>
+  <div id="response-id"></div>
+  <script type="text/javascript">
+    //document.getElementById( "response-id" ).innerHTML = likeAutumn;
+
+    const isChrome = window.navigator.userAgent.indexOf( "Chrome" ) >= 0,
+      isFirefox = window.navigator.userAgent.indexOf( "Firefox" ) >= 0,
+      isSafari = window.navigator.userAgent.indexOf( "Safari" ) >= 0;
+
+    console.log( "isSafari", isSafari, window.navigator );
+
+    if ( isChrome ) {
+      console.log( "I'm using Chrome" );
+      console.info( "I'm using Chrome" );
+      console.warn( "I'm using Chrome" );
+      console.error( "I'm using Chrome" ); // provides full stack trace
+    }
+    else if ( isFirefox ) {
+      console.log( "I'm using Firefox" );
+    }
+    else if ( isSafari ) {
+      console.log( "I'm using Safari" );
+    }
+    else {
+      console.log( "Get a real browser" );
+    }
+
+    const PI = 3.14159, // immutable value
+      person = {  // object literal (collection of name/value pairs)
+        first: "Dean",
+        cars: [   // array (ordered collection)
+          {
+            make: "Tesla",
+            model: "Model S"
+          },
+          {
+            make: "Kia",
+            model: "Sedona"
+          }
+        ],
+        ssn: 123456789,
+        teaches: true
+      };
+
+    console.log( "I drive a ", person.cars[1]["make"] );
+
+    // for-in (not foreign)
+    for ( prop in person ) {
+      document.write( prop + ": " + person[prop] + "<br/>" );
+    }
+
+    // for-each - iterate over arrays
+    person.cars.forEach(function(car){
+      document.write(car.model+"<br/>");
+    });
+    let num1 = "140kg";// without "kg", JS will automatically cast that as a number
+    num2=13;
+    console.log("\nMath:");
+    console.log(num1+num2);//concatenate
+    console.log(num1*num2);//NaN
+    console.log("+ : Parseint",(parseInt(num1)+num2));//addition
+    console.log("* : Parseint",(parseInt(num1)*num2));//multiplication
+    //variable scope
+    var hello="Hello World";
+    console.log("var:",hello);
+    console.log("window:",window.hello);
+    //If you say window.bonjur you will get undefined ->JS errors are unclear!
+    //Every time you reload the page , code is re read and not cached.
+    //So it will again say undefined
+    // console.log("bonjur outside fn:",bonjur);willthrow a not defined error
+    function printGreeting(){
+      console.log("in fn:",hello);//global variable
+      bonjur="Bonjur le monde";
+      var hola="Hola el mondo";
+      var hello="foo";//variable hoisting - hoists the declaration and not the
+      // instantiation, thus causing the in fn:hello as undefined
+      //there is no variable hoisting with let
+      console.log("after foo:",hello);
+    }
+    printGreeting();
+    console.log("outside fn:",hello);
+    console.log("bonjur outside fn:",bonjur); // declaring without var or let or
+    // const so it becomes a global variable. It is an antipattern. Avoid using!
+  //  console.log("hola outside fn:",hola); // reference error
+  </script>
+
+  <script src="BrowserDetect.js">//rendering block //always close when
+    //including anything
+    </script>
+  <script>
+    console.log("OS:",BrowserDetect.OS,
+    "\nBrowser:",BrowserDetect.browser,
+    "\nVersion:",BrowserDetect.version);
+    //bad approach : browser detection
+    if(BrowserDetect.browser=="Chrome"){
+      alert("Yay Chrome!");
+    }
+    else{
+      console.log("Not chrome");
+    }
+    //better approach : feature detection
+    if(!window.console){
+      alert("console not support");
+    }
+    else {
+      console.log("console supported");
+    }
+    //better approach : feature detection
+    if(!window.speechSynthesisEvent){
+      alert("speechSynthesisEvent not support");
+    }
+    else {
+      console.log("speechSynthesisEvent supported");
+    }
+    console.log("\n\n");
+    //logically equivalent but not identical
+      if(0==undefined){ //in JS null=undefined
+      console.log("0 does equal undefined");
+    }
+    else{
+      console.log("0 does not equal undefined");
+    }
+    //identical ===
+    //substrings shuld nt give a Falsy
+    if(null==undefined){ //in JS null=undefined
+      console.log("null identical to  undefined");
+    }
+    else{
+      console.log("null not identical undefined");
+    }
+    if(""){
+      console.log("1.Falsy Value");
+    }
+    else{
+      console.log("1.truthy Value");
+    }
+    if("" || 1){
+      console.log("2.Falsy Value");
+    }
+    else{
+      console.log("2.truthy Value");
+    }
+    //logically equivalent but not identical
+      if(0==false){ //in JS null=undefined
+      console.log("0 does equal false");
+    }
+    else{
+      console.log("0 does not equal false");
+    }
+    //logically equivalent but not identical
+      if(0===false){ //in JS null=undefined
+      console.log("0 identical to false");
+    }
+    else{
+      console.log("0 not identical to false");
+    }
+    if(""==NaN){ //in JS null=undefined
+    console.log("\"\" does equal NaN");
+  }
+  else{
+    console.log("\"\" does not equal NaN");
+  }
+    </script>
+</body>
+</html>

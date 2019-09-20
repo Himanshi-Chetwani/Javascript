@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM Placement</title>
+<script>
+	function changeMe(){
+		let hEle=document.createElement("h2");
+		hEle.setAttribute("id","createText");
+		hEle.setAttribute("style","color:green");
+		//Create the text node and append it to the element
+		let txtEle=document.createTextNode("yahoo - I'm dynamically created");
+		hEle.appendChild(txtEle);
+		//appending to the body
+	//		document.body.appendChild(hEle);
+		//append to moreText  comes above the line now
+	//document.getElementById("moreText").appendChild(hEle);
+	//insert at the beggining of the body
+	document.body.insertBefore(hEle,document.body.firstChild);
+	//replace an existing Node
+	document.getElementById("text").replaceChild(hEle,document.getElementById("text").firstChild);
+	//Clone a Node
+	//let clonedEle=document.getElementById("everything").cloneNode();
+	//The above is not a deep clone, which is why everything is not inside everything
+	//param true clones everything inside also now - deep clone
+	let clonedEle=document.getElementById("everything").cloneNode(true);
+	document.body.appendChild(clonedEle)
+	}
+</script>
+</head>
+<body>
+  <div id="everything">
+    <div id="buttons" style="position:absolute; top:8px; left:200px">
+      <button onclick="changeMe();">Do It!</button>
+    </div>
+
+    <div id="text">
+      Text
+    </div>
+
+    <div id="moreText">
+      More text
+    </div>
+
+    <hr>
+  </div>
+</body>
+</html>

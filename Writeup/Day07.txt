@@ -1,0 +1,17 @@
+1. Cookies are useful for storing session ID
+2. localStorage is useful for storing NV pairs
+3. img src="image.jpg" alt="message" onclick="myFunction();"> Why is it not a good idea to have many event listners? 
+	Reason - Not seperating code from markup
+	Check more reasons with Poornima
+4. onmouseover - when you want to apply multiple event listeners, it will over ride the assignment
+5. Best approach: addEventListner(...)
+6.<main>
+	<nav> 
+		<ul>
+			<li>
+				I want to add an event listner on to the list item!
+				The clicker event happens on main->nav..->li 
+
+So I can specify one which of the events I want the nav event to happen. I can choose the order in which the event fires!
+7. Capture Phase  events & Bubble Phase Events
+8. CDATA in XML doesn't parse the XML and you're telling it is a character data. It is nt an XML target that you need to evaluate.

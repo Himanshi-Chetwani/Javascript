@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>DOM Creation</title>
+<script>
+	function createText(){
+		//first, in-memory
+		//Create an elemnet
+		let hEle=document.createElement("h2");
+		hEle.setAttribute("id","createText");
+		hEle.setAttribute("style","color:green");
+		//Create the text node and append it to the element
+		let txtEle=document.createTextNode("yahoo - I'm dynamically created");
+		hEle.appendChild(txtEle);
+		//Insert it into DOM
+		let bodyEle=document.getElementsByTagName("body")[0];
+		bodyEle=document.querySelector("body")
+		bodyEle=document.body;
+		//now add the <h> to the document
+		bodyEle.appendChild(hEle);
+		let imgEle=document.createElement("img");
+		imgEle.setAttribute("src","california.jpg");
+		bodyEle.append(imgEle);
+		// add a button
+		let btnEle=document.createElement("input");
+		btnEle.setAttribute("type","button");
+		btnEle.setAttribute("value","click me now");
+		btnEle.setAttribute("onclick", "this.parentNode.removeChild(this);");
+		//Made the click me now button disaapear
+		bodyEle.append(btnEle);
+		bodyEle.childNodes.forEach( function(ele){
+			console.dir(ele); //directory listing of properties
+		});
+	}
+</script>
+</head>
+<body>
+<div id="buttons" style="position:absolute; top:8px; left:200px">
+  <button onclick="createText();">Create It!</button>
+</div>
+<body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Events</title>
+	<style type="text/css">
+	  * {
+	    font-family: Verdana, sans-serif;
+	    margin: 0;
+	    padding: 0;
+	  }
+	  body {
+	    padding: 20px;
+	  }
+	  h2 {
+	    margin-top: 20px;
+	  }
+	  div {
+	    float: left;
+	    margin-left: 20px;
+	  }
+	</style>
+	<script>
+
+	  function doThat( x ){
+	  	console.log( 'in doThat(): ' + x );
+	  }
+
+	  function doIt(){
+	  	console.log( 'in doIt(): ' + 'no arguments' );
+		}
+
+		function init(){
+			document.getElementsByTagName('img')[1]
+			.setAttribute("onmouseover", "console.log('hovering')");
+
+			document.getElementsByTagName('img')[2]
+			.onclick = function(){
+				console.log("onclick property");
+			};
+			// This is the approach that we want to take
+			let img3 = document.getElementsByTagName("img")[3];
+			img3
+			.addEventListener("click", function(){
+					console.log("addEventListener");
+			}, false)
+
+			//do this if instead of an anonymous function you want to put in a function anem
+			img3
+			.addEventListener("click", doIt, false); // if we had () doit would run as soon as the init function is called
+		};
+
+	</script>
+</head>
+<body onload="init();">
+
+  <div>
+    <h2>Image 1:</h2>
+    <p>html attribute</p>
+    <img src="pic.jpg" onclick="console.log('From an html attribute event');" />
+  </div>
+
+  <div>
+    <h2>Image 2:</h2>
+    <p>setAttribute()</p>
+    <img src="pic.jpg"/>
+  </div>
+
+  <div>
+    <h2>Image 3:</h2>
+    <p>onclick</p>
+    <img src="pic.jpg"/>
+  </div>
+
+  <div>
+    <h2>Image 4:</h2>
+    <p>addEventListener()</p>
+    <img src="pic.jpg"/>
+  </div>
+
+</body>
+</html>
