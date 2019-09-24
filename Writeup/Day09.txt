@@ -1,0 +1,3 @@
+AJAX- Asynchronous event models, event listners listen to eents and the eventually manupilate the DOM.
+XHR enables the Http Xml request
+Web sockets instead of Request handleres - look up
